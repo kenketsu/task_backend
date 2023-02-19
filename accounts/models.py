@@ -25,6 +25,8 @@ class Profile(models.Model):
         verbose_name = "プロフィール"
         verbose_name_plural = "プロフィール"
 
+    id = models.UUIDField("ID", default=uuid4, primary_key=True, editable=False)
+
     user_profile = models.OneToOneField(
         settings.AUTH_USER_MODEL, related_name="user_profile", on_delete=models.CASCADE
     )
