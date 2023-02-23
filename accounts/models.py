@@ -28,9 +28,14 @@ class Profile(models.Model):
     id = models.UUIDField("ID", default=uuid4, primary_key=True, editable=False)
 
     user_profile = models.OneToOneField(
-        settings.AUTH_USER_MODEL, related_name="user_profile", on_delete=models.CASCADE
+        settings.AUTH_USER_MODEL,
+        related_name="user_profile",
+        on_delete=models.CASCADE,
+        verbose_name="プロフィールユーザー",
     )
-    avatar = models.ImageField("アバター", blank=True, null=True, upload_to=upload_avatar_path)
+    avatar = models.ImageField(
+        "アバター", blank=True, null=True, upload_to=upload_avatar_path
+    )
 
     def __str__(self):
         return self.user_profile.username
