@@ -30,7 +30,7 @@ class Profile(models.Model):
     user_profile = models.OneToOneField(
         settings.AUTH_USER_MODEL, related_name="user_profile", on_delete=models.CASCADE
     )
-    avatar = models.ImageField(blank=True, null=True, upload_to=upload_avatar_path)
+    avatar = models.ImageField("アバター", blank=True, null=True, upload_to=upload_avatar_path)
 
     def __str__(self):
         return self.user_profile.username
