@@ -1,6 +1,5 @@
 from django.contrib.auth import get_user_model
-from rest_framework import generics, permissions, status, viewsets
-from rest_framework.response import Response
+from rest_framework import generics, permissions, viewsets
 
 from .models import Profile
 from .serializers import ProfileSerializer, UserSerializer
@@ -28,14 +27,7 @@ class LoginUserRetrieveAPIView(generics.RetrieveAPIView):
 class ProfileViewSet(viewsets.ModelViewSet):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
+    http_method_names = ["get", "post", "put", "head", "options"]
 
     def perform_create(self, serializer):
         serializer.save(user_profile=self.request.user)
-
-    def destroy(self, request, *args, **kwargs):
-        response = {"message": "DELETEメソッドは許可されていません"}
-        return Response(response, status=status.HTTP_400_BAD_REQUEST)
-
-    def partial_update(self, request, *args, **kwargs):
-        response = {"message": "PATCHメソッドは許可されていません"}
-        return Response(response, status=status.HTTP_400_BAD_REQUEST)
