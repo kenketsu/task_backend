@@ -23,6 +23,7 @@ class Task(models.Model):
     class Meta:
         verbose_name = "タスク"
         verbose_name_plural = "タスク"
+        ordering = ["-created_at"]
 
     class Status(models.IntegerChoices):
         NOT_STARTED = 0, _("新規")
@@ -41,9 +42,9 @@ class Task(models.Model):
     owner = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="task_owner", verbose_name="タスク作成者"
     )
-    started_at = models.DateTimeField("タスク開始時間" ,null=True, blank=True)
-    paused_at = models.DateTimeField("タスク一時停止時間" ,null=True, blank=True)
-    total_time = models.DurationField("合計作業時間", default=0)
+    started_at = models.DateTimeField("タスク開始時間", null=True, blank=True)
+    paused_at = models.DateTimeField("タスク一時停止時間", null=True, blank=True)
+    total_time = models.DurationField("合計作業時間", default=0, null=True, blank=True)
     created_at = models.DateTimeField("作成日時", auto_now_add=True)
 
     def __str__(self):
