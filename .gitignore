@@ -1,3 +1,4 @@
 /.env
 tvenv/
 __pycache__/
+media/
