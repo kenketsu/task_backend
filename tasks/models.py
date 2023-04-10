@@ -26,7 +26,7 @@ class Task(models.Model):
 
     class Status(models.IntegerChoices):
         NOT_STARTED = 1, _("新規")
-        ON_GOING = 2, _("作業中")
+        ON_GOING = 2, _("進行中")
         COMPLETED = 3, _("完了")
 
     class Progress(models.IntegerChoices):

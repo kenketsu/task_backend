@@ -94,10 +94,11 @@ REST_FRAMEWORK = {
     ],
 }
 
-# ヘッダータイプの指定　JWTの有効期限を30分に設定
+# ヘッダータイプの指定,アクセストークンの有効期限を30分に設定,リフレッシュトークンの有効期限を7日に設定
 SIMPLE_JWT = {
     "AUTH_HEADER_TYPES": ("JWT",),
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=30),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=7)
 }
 
 # Database
