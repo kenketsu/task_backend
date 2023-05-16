@@ -8,7 +8,7 @@
 # URL
 
 https://tomosusu-task.web.app/ <br>
-下記ゲストアカウントにてログインをお願いいたします。<br>
+ゲストアカウント<br>
 ユーザーネーム: guest <br>
 パスワード: guestpasword <br>
 
