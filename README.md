@@ -10,7 +10,7 @@
 https://tomosusu-task.web.app/ <br>
 ゲストアカウント<br>
 ユーザーネーム: guest <br>
-パスワード: guestpasword <br>
+パスワード: guestpassword <br>
 
 # 作成経緯
 
