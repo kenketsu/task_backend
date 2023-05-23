@@ -26,7 +26,7 @@ https://tomosusu-task.web.app/ <br>
 - Nginx
 - React
 - Redux ToolKit
-- AWS
+- AWS EC2
 - Firebase
 
 # 機能一覧
